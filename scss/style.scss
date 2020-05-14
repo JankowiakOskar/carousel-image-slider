@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import '_config.scss';
+@import '_mobile.scss';
+
+// Reset style
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Core Colors
+
+
+
+html {
+    font-size: 10px;
+    font-family: 'lato', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background:$dark;
+    @include flex-center(row);
+}
+
+/*---------------------SLIDER-------------------------*/
+
+.slider {
+    position: relative;
+    width: 85%;
+    height: 85%;
+    border: 0.4rem solid #000;
+    box-shadow: 0 0 5px $dark;
+
+    .slides-box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left: 0;
+            @include flex-center(row);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            opacity: 0;
+            transition: opacity .55s, transform .55s;
+            transform: translateX(-100%);
+
+            p {
+                flex-basis: 100%;
+                text-align: center;
+                font-size: 5rem;
+                color: $white;
+                font-weight: bold;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                text-shadow: 0 0 5px $brown;
+            }
+        }
+
+        .slide-active {
+            opacity: 0.8;
+            transform: translateX(0);
+        }
+    }
+
+    a {
+        width: 6rem;
+        height: 6rem;
+        font-size: 6rem;
+        position: absolute;
+        top:50%;
+        color: $dark-green;
+        transform: translateY(-2rem);
+
+        i {
+            transition: transform 0.2s ease-in-out,
+                        color 0.2s ease-in-out;
+        }
+    }
+
+    .prev i:hover {
+        transform: translateX(-0.5rem) scale(1.05);
+        color: $green;
+    }
+
+    .next i:hover {
+        transform: translateX(0.5rem) scale(1.05);
+        color: $green;
+    }
+
+    
+
+
+    .pagination {
+        position: absolute;
+        width: 100%;
+        bottom: 5%;
+        left: 0;
+        @include flex-center(row);
+
+        .pag {
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: $white;
+            border-radius: 50%;
+            margin-left: 0.8rem;
+            transition: all .55s;
+            cursor: pointer;
+        }
+
+        .pag:hover, .pag-active {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .pag-active {
+            background: $green;
+        }
+
+    }
+}
+
+
+
+.slide:first-of-type {
+    background-image: url('/dist/img/activity.jpg');
+}
+
+.slide:nth-of-type(2) {
+    background: url('/dist/img/barbell.jpg');
+}
+
+.slide:nth-of-type(3) {
+    background: url('/dist/img/man-yoga.jpg');
+}
+
+.slide:nth-of-type(4) {
+    background: url('/dist/img/threepeople.jpg');
+}
+
+a:nth-of-type(1) {
+    margin-left: 10px;
+    left: 0;
+}
+
+a:nth-of-type(2) {
+    margin-right: 10px;
+    right: 0;
+}
+
+
+
+

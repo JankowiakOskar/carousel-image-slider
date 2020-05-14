@@ -1,0 +1,15 @@
+$dark-blue: #030526;
+$dark: #101C26;
+$light-blue: #25D9D9;
+$green: #A6BF49;
+$dark-green: rgb(114, 136, 33);
+$brown: #8C7E6D;
+$white: #fff;
+
+
+@mixin flex-center($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
