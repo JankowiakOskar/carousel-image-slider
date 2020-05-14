@@ -133,19 +133,19 @@ body {
 
 
 .slide:first-of-type {
-    background-image: url('../dist/img/activity.jpg');
+    background: url('../img/activity.jpg');
 }
 
 .slide:nth-of-type(2) {
-    background: url('/dist/img/barbell.jpg');
+    background: url('../img/barbell.jpg');
 }
 
 .slide:nth-of-type(3) {
-    background: url('/dist/img/man-yoga.jpg');
+    background: url('../img/man-yoga.jpg');
 }
 
 .slide:nth-of-type(4) {
-    background: url('/dist/img/threepeople.jpg');
+    background: url('../img/threepeople.jpg');
 }
 
 a:nth-of-type(1) {
